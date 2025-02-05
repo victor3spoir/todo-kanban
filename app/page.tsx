@@ -1,12 +1,13 @@
 import Colum from "@/features/shared/ui/colum";
+import Columns from "@/features/shared/ui/columns";
 import { Todo, TodoStatus } from "@/features/todo/definitions";
-
+import { v4 } from "uuid"
 
 const todos: Todo[] = [
-  { id: "1", title: "survey new app", description: "lorem ipsum dolor. imae", status: TodoStatus.todo },
-  { id: "2", title: "deploy new app", description: "lorem ipsum dolor. imae", status: TodoStatus.progress },
-  { id: "3", title: "code new app", description: "lorem ipsum dolor. imae", status: TodoStatus.done },
-  { id: "4", title: "perform another task", description: "lorem ipsum dolor. imae", status: TodoStatus.todo },
+  { id: v4(), title: "survey new app", description: "lorem ipsum dolor. imae", status: TodoStatus.todo },
+  { id: v4(), title: "deploy new app", description: "lorem ipsum dolor. imae", status: TodoStatus.progress },
+  { id: v4(), title: "code new app", description: "lorem ipsum dolor. imae", status: TodoStatus.done },
+  { id: v4(), title: "perform another task", description: "lorem ipsum dolor. imae", status: TodoStatus.todo },
 ]
 
 
@@ -19,12 +20,8 @@ export default function Home() {
       <section className="my-2">
         <h1 className="text-2xl font-bold">Todo Kanban</h1>
       </section>
+      <Columns todos={todos} />
 
-      <section className="w-full h-full min-h-[700px] flex gap-5 justify-start ">
-        <Colum title="Todos" status={TodoStatus.todo} todos={todos} />
-        <Colum title="Progress" status={TodoStatus.progress} todos={todos} />
-        <Colum title="Done" status={TodoStatus.done} todos={todos} />
-      </section>
 
     </div>
   );

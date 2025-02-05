@@ -7,11 +7,11 @@ export default function TodoCard({ todo: { title, description, status } }: { tod
 
   return (
     <article className={cn("py-2 px-3 rounded-md my-2 bg-white w-full",
-      "flex items-center justify-between",
+      "flex items-center justify-between hover:shadow-md transition-all",
       {
-        "border-2 border-sky-400": status == TodoStatus.todo,
-        "border-2 border-red-300": status == TodoStatus.progress,
-        "border-2 border-green-500": status == TodoStatus.done,
+        "border-2  border-sky-400": status == TodoStatus.todo,
+        "border-2  border-red-300": status == TodoStatus.progress,
+        "border-2  border-green-500": status == TodoStatus.done,
       }
     )}
       draggable={true}>
