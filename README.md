@@ -1,5 +1,6 @@
 # Todo Kanban
 
-## Learned
+Simple application for handling task using kanban like interface.
 
-- reactHook : useMemo -> for caching operation results
+- drag & drop features
+- state management features

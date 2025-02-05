@@ -7,10 +7,16 @@ import AddTodoDialog from "@/features/todo/ui/add-todo-dialog";
 export default function Columns({ todos }: { todos: Todo[] }) {
 
   const usedTodo = useTodosStore(state => state.todos)
-  // const addTodo = useTodosStore(state => state.addTodo)
-  // todos.map(todo => addTodo(todo))
+  const draggedTodoId = useTodosStore(state => state.draggedTodoId)
+  const addTodo = useTodosStore(state => state.addTodo)
+  
+  for (const todo of todos) {
+    // addTodo(todo)
+    console.log("sdfdsfds", todo.id, todo.title)
+  }
   return (
     <div>
+      <h1>Dragged: {draggedTodoId}</h1>
       <div>
         <AddTodoDialog />
       </div>
